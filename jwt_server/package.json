@@ -1,0 +1,54 @@
+{
+  "name": "auth-tokens",
+  "version": "0.1.7",
+  "description": "Auth library for Node.js applications based on access and refresh tokens approach",
+  "keywords": [
+    "auth token",
+    "access token",
+    "refresh token",
+    "csrf",
+    "jwt"
+  ],
+  "author": "Leonid Vinogradov <win.leon@pm.me>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=9"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "tap",
+    "example": "node-dev ./example/server.js",
+    "codecov": "tap --coverage-report=text-lcov | codecov"
+  },
+  "dependencies": {
+    "jose": "^1.12.1"
+  },
+  "devDependencies": {
+    "codecov": "^3.7.0",
+    "cookies": "^0.8.0",
+    "node-dev": "^4.0.0",
+    "rewiremock": "^3.14.2",
+    "standard": "^14.3.4",
+    "tap": "^14.10.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-win/node-auth-tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leon-win/node-auth-tokens/issues"
+  },
+  "homepage": "https://github.com/leon-win/node-auth-tokens",
+  "tap": {
+    "comments": true,
+    "coverage-report": [
+      "text",
+      "html"
+    ],
+    "esm": false,
+    "jsx": false,
+    "ts": false
+  }
+}
