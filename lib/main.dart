@@ -73,10 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
     dio.interceptors.add(
       Fresh.oAuth2(
-        tokenStorage: InMemoryTokenStorage(),
+        tokenStorage: InMemoryTokenStorage()
+          ..write(
+            const OAuth2Token(accessToken: 'tokens are managed in cookies'),
+          ),
         refreshToken: (token, client) async {
           print('refresh operation');
-          return Future.delayed(Duration(milliseconds: 0), () async {
+          return Future.delayed(Duration(milliseconds: 5000), () async {
             await dio.post('/refresh', data: {});
 
             return Future.value(
